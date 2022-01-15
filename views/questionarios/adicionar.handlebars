@@ -1,0 +1,25 @@
+    <form action="/questionarios/add" method="post">
+        <label for="tituloQUestionario">Titulo do questionario:</label>
+            <input type="text" name="tituloQuestionario" required>
+        
+        <br><br>
+        <label for="tituloPergunta1">Titulo da pergunta 1:</label>
+            <input type="text" name="tituloPergunta1" required> <br><br>
+            <label for="respota1">Resposta 1</label>
+                <input type="text" name="resposta1" required> <br><br>
+            <label for="respota2">Resposta 2</label>
+                <input type="text" name="resposta2" required> <br><br>
+            <label for="respota3">Resposta 3</label> 
+                <input type="text" name="resposta3" required> <br><br>
+            <label for="respota4">Resposta 4</label> 
+                <input type="text" name="resposta4" required>
+                <br> <br> <br>
+            <label for="respostaCerta">Resposta Certa:</label>
+                <select name="respostaCerta" id="">
+                    <option value="0"> Resposta 1</option>
+                    <option value="1"> Resposta 2</option>
+                    <option value="2"> Resposta 3</option>
+                    <option value="3"> Resposta 4</option>
+                </select>
+        <button type="submit">Criar Questionario</button>
+    </form>

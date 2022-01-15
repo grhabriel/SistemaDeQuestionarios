@@ -1,0 +1,9 @@
+{{#each categorias}}
+    <article>
+        <h1>{{titulo}}</h1>
+        <p>Criado em: {{data}}</p>
+        <a href="/questionarios/fazer/{{_id}}">Entrar no questionario</a>
+    </article>
+{{else}}
+    <p class="alertaErro">Não existem questionarios cadastrados</p>
+{{/each}}
