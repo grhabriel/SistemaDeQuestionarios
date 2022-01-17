@@ -1,4 +1,5 @@
 # Quiztoon
+Sitezinho que permite o usuário criar e responder a quizzes.
 
 ## Integrantes
 * Gabriel Henrique
