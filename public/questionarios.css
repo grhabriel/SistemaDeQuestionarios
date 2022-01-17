@@ -7,7 +7,7 @@ body{
     width: 100%;
     text-align: center;
 }
-
+/* Retirado do canal Willian Justan Cursos - tutorial de como criar um background gradiente animado :)*/
 @keyframes colors{
     0%{
         background-position: 0% 50%;
