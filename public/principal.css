@@ -1,4 +1,3 @@
-
 html, body{
     margin: 0;
     zoom: 90%;
@@ -58,7 +57,7 @@ h1{
     transform: scale(1.1);
 }
 
-/* Janela Modal */
+/* Janela Modal retirada do video do professor Coutinho no canal Flavio Coutinho :) */
 #quadroInicial h1{
     color: black;
     text-align: center;
@@ -104,21 +103,21 @@ h1{
 }
 
 .modal{
+    display: none;
     font-size: 30px;
     font-family: 'Arial Narrow Bold', sans-serif;
     position: fixed;
     z-index: 10;
-    width: 10%;
-    height: auto;
-    left: 25vw;
+    width: 25%;
+    max-width: max-content;
+    left: 30%;
     top: 35%;
     margin: 150px auto;
     background-color: white;
     transform: translateY(-25%);
-    padding: 3%;
+    padding: 5%;
     border-radius: 2%;
     box-shadow: 0 5px 1px rgba(0,0,0,.2);
-    opacity: 0;
     transition: all 200ms ease-out;
 }
 
@@ -168,8 +167,6 @@ button.fecharModal{
 .divQuestionario h1{
     text-align: center;
 }
-
-  
 
 .todosQuestionarios{
     display: flex;
