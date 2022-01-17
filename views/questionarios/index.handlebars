@@ -1,9 +1,15 @@
-{{#each categorias}}
-    <article>
-        <h1>{{titulo}}</h1>
-        <p>Criado em: {{data}}</p>
-        <a href="/questionarios/fazer/{{_id}}">Entrar no questionario</a>
-    </article>
-{{else}}
-    <p class="alertaErro">Não existem questionarios cadastrados</p>
-{{/each}}
+<h1>Questionários</h1>
+
+<section class="adicionarPerguntas">
+    {{#each categorias}}
+        <article class="divQuestionario">
+            <input type="text" name="identificação" hidden  id="id" value="{{_id}}" >
+            <h1>{{titulo}}</h1>
+            <p>Criado em: {{data}}</p>
+            <p>Clique para entrar no questionário!</p>
+        </article>
+    {{else}}
+        <p class="alertaErro">Não existem questionarios cadastrados</p>
+    {{/each}}
+</section>
+<script src="/teste.js"></script>

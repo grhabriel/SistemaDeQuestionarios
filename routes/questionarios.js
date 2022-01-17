@@ -19,16 +19,27 @@ router.get("/adicionar",function(req,res){
 });
 
 router.post("/add",function(req,res){
-    const perguntas = {
-        titulo: req.body.tituloPergunta1,
-        respostas: [req.body.resposta1,req.body.resposta2,
-            req.body.resposta3,req.body.resposta4],
-        respostaCerta: req.body.respostaCerta
-    }
+    let qntPerguntas = req.body.qntPerguntas;
     const novoQuestionario = {
         titulo: req.body.tituloQuestionario,
-        perguntas:[perguntas]
+        perguntas:[]
     }
+    for(let i = 1; i<=qntPerguntas; i++){
+        console.log(req.body.tituloPergunta`${i}`);
+        const pergunta = {
+            titulo: req.body.tituloPergunta`${i}`,
+            respostas: [req.body.resposta`${i}`,
+                        req.body.resposta`${i}`,
+                        req.body.resposta`${i}`,
+                        req.body.resposta`${i}`],
+            respostaCerta: req.body.respostaCerta`${qntPerguntas}`
+        }
+        console.log(pergunta);
+        console.log(pergunta.respostas);
+        novoQuestionario.perguntas.append(pergunta);
+    }
+    
+    
     console.log(novoQuestionario);
     new Questionarios(novoQuestionario).save().then(function(){
         console.log("Questionario salvo com sucesso");
@@ -37,6 +48,7 @@ router.post("/add",function(req,res){
     })
     res.redirect("/questionarios/adicionar");
 });
+
 router.get("/fazer/:id",function(req,res){
     Questionarios.findOne({_id:req.params.id}).then((questionario)=>{
         res.render("questionarios/fazerQuestionario",{questionario: questionario});
@@ -48,9 +60,9 @@ router.get("/fazer/:id",function(req,res){
 
 router.post("/verificar",function(req,res){
     let cont = 0;
-    identificacao = req.body.idQuestionario;
-    respostaSubmetida = req.body.respostaPergunta0;
-    respostaCorreta = req.body.correta;
+    let identificacao = req.body.idQuestionario;
+    let respostaSubmetida = req.body.respostaPergunta;
+    let respostaCorreta = req.body.correta;
     if(respostaSubmetida == respostaCorreta){
         cont++;
     }
