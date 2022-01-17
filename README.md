@@ -1,5 +1,5 @@
 # Quiztoon
-Gabriel Henrique
-Julia Reis
-Leticia Schmidt
-Nathan Filipe
+* Gabriel Henrique
+* Julia Reis
+* Leticia Schmidt
+* Nathan Filipe
