@@ -1,18 +1,17 @@
 <input type="text" hidden  value="{{questionario._id}}" name="idQuestionario">
 
 {{#each questionario.perguntas}}
+    {{this.titulo}}
+    <br>
     <form action="/questionarios/verificar" method="post">
-        <li>
-            {{this.titulo}}?
-            <ul>
-            {{#each this.respostas}}
-                <li>{{this}}</li>
-            {{/each}}
-            </ul>
-        </li>
+        {{#each this.respostas}}
+            <div class="pergunta">
+                <input type="radio" required value="{{@index}}" name="respostaPergunta">
+                <label for="">{{this}}</label>
+            </div>
+        {{/each}}
         <input type="number" hidden name="correta" value="{{this.respostaCerta}}">
-        <input type="number" name="respostaPergunta{{@index}}" required id="">
         <button type="submit">Enviar Questionario</button>
     </form>
-    
+        
 {{/each}}

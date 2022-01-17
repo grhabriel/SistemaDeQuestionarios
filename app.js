@@ -51,7 +51,9 @@ const Questionarios = mongoose.model("questionarios");
     app.use(express.static(path.join(__dirname,"public"))); //Onde estão os arquivos estaticos
 //Rotas
     app.use("/questionarios",questionarios)
-
+    app.get("/",function(req,res){
+        res.sendFile("index");
+    });
 
 //Servidor
     const porta = 8081;

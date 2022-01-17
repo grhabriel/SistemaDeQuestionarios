@@ -1,25 +1,33 @@
+    <input type="number" name="qntPerguntas" hidden id="qntPerguntas" value = "1">
+    
     <form action="/questionarios/add" method="post">
-        <label for="tituloQUestionario">Titulo do questionario:</label>
+        <h1>Adicionar Questionário</h1>
+
+        <section class="adicionarPerguntas">
+            <label for="tituloQUestionario">Titulozinho:</label>
             <input type="text" name="tituloQuestionario" required>
-        
-        <br><br>
-        <label for="tituloPergunta1">Titulo da pergunta 1:</label>
-            <input type="text" name="tituloPergunta1" required> <br><br>
-            <label for="respota1">Resposta 1</label>
-                <input type="text" name="resposta1" required> <br><br>
-            <label for="respota2">Resposta 2</label>
-                <input type="text" name="resposta2" required> <br><br>
-            <label for="respota3">Resposta 3</label> 
-                <input type="text" name="resposta3" required> <br><br>
-            <label for="respota4">Resposta 4</label> 
-                <input type="text" name="resposta4" required>
-                <br> <br> <br>
-            <label for="respostaCerta">Resposta Certa:</label>
-                <select name="respostaCerta" id="">
-                    <option value="0"> Resposta 1</option>
-                    <option value="1"> Resposta 2</option>
-                    <option value="2"> Resposta 3</option>
-                    <option value="3"> Resposta 4</option>
-                </select>
+            <br><br>
+            <article class="pergunta1">
+                <label for="tituloPergunta1">Pergunta 1:</label>
+                    <input type="text" name="tituloPergunta1" required> <br><br>
+                    <label for="pergunta1Respota1">Alternativa 1</label>
+                        <input type="text" name="resposta1" required> <br><br>
+                    <label for="pergunta2Respota2">Alternativa 2</label>
+                        <input type="text" name="resposta2" required> <br><br>
+                    <label for="pergunta3Respota3">Alternativa 3</label> 
+                        <input type="text" name="resposta3" required> <br><br>
+                    <label for="pergunta4Respota4">Alternativa 4</label> 
+                        <input type="text" name="resposta4" required>
+                        <br> <br> <br>
+                    <label for="respostaCerta">Resposta Certa:</label>
+                        <select name="respostaCerta" id="">
+                            <option value="0"> Alternativa 1</option>
+                            <option value="1"> Alternativa 2</option>
+                            <option value="2"> Alternativa 3</option>
+                            <option value="3"> Alternativa 4</option>
+                        </select>
+                </article>
+            </section>
+            <button id="novaPergunta">Outra Pergunta</button>
         <button type="submit">Criar Questionario</button>
     </form>

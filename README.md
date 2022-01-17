@@ -1,5 +1,1 @@
-# Quiztoon
-* Gabriel Henrique
-* Julia Reis
-* Leticia Schmidt
-* Nathan Filipe
+Trabalho Pratico 2
