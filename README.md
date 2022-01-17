@@ -1,1 +1,7 @@
-Trabalho Pratico 2
+# Quiztoon
+
+## Integrantes
+* Gabriel Henrique
+* Júlia Reis
+* Letícia Schmidt
+* Nathan Filipe
