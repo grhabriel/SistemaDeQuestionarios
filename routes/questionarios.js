@@ -18,28 +18,32 @@ router.get("/adicionar",function(req,res){
     res.render("questionarios/adicionar");
 });
 
-router.post("/add",function(req,res){
-    let qntPerguntas = req.body.qntPerguntas;
-    const novoQuestionario = {
-        titulo: req.body.tituloQuestionario,
-        perguntas:[]
-    }
-    for(let i = 1; i<=qntPerguntas; i++){
-        console.log(req.body.tituloPergunta`${i}`);
-        const pergunta = {
-            titulo: req.body.tituloPergunta`${i}`,
-            respostas: [req.body.resposta`${i}`,
-                        req.body.resposta`${i}`,
-                        req.body.resposta`${i}`,
-                        req.body.resposta`${i}`],
-            respostaCerta: req.body.respostaCerta`${qntPerguntas}`
+router.post("/add",function(req,res){ 
+    let todosOsRegistros = Object.entries(req.body);
+    
+    let quantidadeQuestoes = parseInt(todosOsRegistros[0][1]);
+    let arrayPerguntas = []; 
+    for(let i = 1; i<=quantidadeQuestoes;i++){
+    
+        let tituloPergunta = req.body[`tituloPergunta${i}`];
+        let  arrayRepostas = [];
+        for(let j = 1; j<=4;j++){
+            arrayRepostas.push(req.body[`pergunta${i}Resposta${j}`]);
         }
-        console.log(pergunta);
-        console.log(pergunta.respostas);
-        novoQuestionario.perguntas.append(pergunta);
+        let respostaCerta = req.body[`respostaCertaPergunta${i}`];
+        const novaPergunta = {
+            titulo: tituloPergunta,
+            respostas: arrayRepostas,
+            respostaCerta: respostaCerta
+        }
+        arrayPerguntas.push(novaPergunta);
     }
     
-    
+    const novoQuestionario = {
+        titulo: todosOsRegistros[1][1],
+        perguntas: arrayPerguntas
+    }
+
     console.log(novoQuestionario);
     new Questionarios(novoQuestionario).save().then(function(){
         console.log("Questionario salvo com sucesso");
@@ -48,6 +52,8 @@ router.post("/add",function(req,res){
     })
     res.redirect("/questionarios/adicionar");
 });
+
+
 
 router.get("/fazer/:id",function(req,res){
     Questionarios.findOne({_id:req.params.id}).then((questionario)=>{
