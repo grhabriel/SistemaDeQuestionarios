@@ -18,19 +18,19 @@ botaoPergunta.addEventListener('click',function(){
     <label for="pergunta${contadorPerguntas}Respota2">Alternativa 2</label>
         <input type="text" name="pergunta${contadorPerguntas}Resposta2" required> <br><br>
     <label for="pergunta${contadorPerguntas}Respota3">Alternativa 3</label> 
-        <input type="text" name="pergunta${contadorPerguntas}resposta3" required> <br><br>
+        <input type="text" name="pergunta${contadorPerguntas}Resposta3" required> <br><br>
     <label for="pergunta${contadorPerguntas}Respota4">Alternativa 4</label> 
         <input type="text" name="pergunta${contadorPerguntas}Resposta4" required>
         <br> <br> <br>
-    <label for="respostaCerta">Resposta Certa:</label>
-        <select name="respostaCerta${contadorPerguntas}" id="">
+    <label for="respostaCertaPergunta${contadorPerguntas}">Resposta Certa:</label>
+        <select name="respostaCertaPergunta${contadorPerguntas}" id="">
             <option value="0"> Alternativa 1</option>
             <option value="1"> Alternativa 2</option>
             <option value="2"> Alternativa 3</option>
             <option value="3"> Alternativa 4</option>
         </select>`
 
-    mudarInput  = document.querySelector("#qntPerguntas");  
+    mudarInput  = document.querySelector("#qnt");  
     mudarInput.value = contadorPerguntas;  
     containerSection.appendChild(novaAreaPergunta);
 });
