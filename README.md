@@ -1,4 +1,4 @@
-# Quiztoon ✔️:brain: ❌
+# Quiztoon ✔️:brain:❌
 Sitezinho que permite o usuário criar e responder a quizzes.
 
 ## Integrantes
