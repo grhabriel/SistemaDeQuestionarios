@@ -1,3 +1,4 @@
+
 html, body{
     margin: 0;
     zoom: 90%;
@@ -40,6 +41,7 @@ h1{
     font-family: 'Noto Mono', sans-serif;
     
 }
+
 #jogar:hover {
     transition: 0.3s;
     transform: scale(1.1);
@@ -53,7 +55,6 @@ h1{
 }
 
 #entrar:hover {
-
     transform: scale(1.1);
 }
 
@@ -95,7 +96,6 @@ h1{
     width: 2%;
     height: 2%;
     margin: 10px;
-    /*border-radius: 7px; */
     cursor: pointer;
     background-color: rgb(255, 255, 255, 0);
     font-family: 'Noto Mono', sans-serif;
@@ -133,9 +133,11 @@ span.fecharModal{
     padding: 1%;
     cursor: pointer;
 }
+
 span.fecharModal:hover {
     background-color: rgba(173, 11, 11, 0.616);
 }
+
 button.fecharModal{
     cursor: pointer;
     width: 4em;
@@ -143,7 +145,7 @@ button.fecharModal{
 }
 
 .modal.visivel{
-    opacity: 1;
+    display: block;
     transform: translateY(-50%);
 }
 

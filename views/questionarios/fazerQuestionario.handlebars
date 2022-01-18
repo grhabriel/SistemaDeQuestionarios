@@ -1,17 +1,22 @@
 <input type="text" hidden  value="{{questionario._id}}" name="idQuestionario">
+<input type="number" hidden value="{{questionario.quantidadePerguntas}}" id="quantidadePerguntas">
 
-{{#each questionario.perguntas}}
-    {{this.titulo}}
-    <br>
-    <form action="/questionarios/verificar" method="post">
-        {{#each this.respostas}}
-            <div class="pergunta">
-                <input type="radio" required value="{{@index}}" name="respostaPergunta">
-                <label for="">{{this}}</label>
-            </div>
-        {{/each}}
-        <input type="number" hidden name="correta" value="{{this.respostaCerta}}">
-        <button type="submit">Enviar Questionario</button>
-    </form>
-        
-{{/each}}
+
+<h1>{{questionario.titulo}}</h1>
+<main>
+    {{#each questionario.perguntas}}
+        <article id="pergunta{{@index}}">
+            <h2>{{this.titulo}}</h2>
+            <section class="seccaoResposta">
+                {{#each this.respostas}}
+                    <input type="radio" value="{{@index}}" checked name="respostaPergunta{{@../index}}">
+                    <label for="respostaPergunta{{@../index}}">{{this}}</label>
+                {{/each}}
+                <br>
+                <button class="botaoProx">Proxima Pergunta!</button>
+            </section>
+        </article>
+    {{/each}}
+    
+</main>
+<script src="/proximaPergunta.js"></script>

@@ -22,6 +22,10 @@ const Questionario = new Schema({
         type: Date,
         default: Date.now()
     },
+    quantidadePerguntas: {
+        type: Number,
+        required: true
+    },
     perguntas: [pergunta],
     // criador: {
     //     type: mongoose.Schema.Types.ObjectId,
