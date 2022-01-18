@@ -9,7 +9,7 @@ const Questionarios = mongoose.model("questionarios");
 
 router.get("/",function(req,res){
     Questionarios.find().then(function(categorias){
-        res.render("questionarios/index",{categorias: categorias});
+        res.render("questionarios/index",{questionarios: categorias});
     }).catch(function(err){
         console.log("Erro:" +err);
     })
@@ -41,7 +41,8 @@ router.post("/add",function(req,res){
     
     const novoQuestionario = {
         titulo: todosOsRegistros[1][1],
-        perguntas: arrayPerguntas
+        perguntas: arrayPerguntas,
+        quantidadePerguntas: quantidadeQuestoes
     }
 
     console.log(novoQuestionario);

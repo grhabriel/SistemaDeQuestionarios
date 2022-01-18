@@ -1,4 +1,4 @@
-body{
+body{   
     background-image: url(imagens/fundo.png);
     background: linear-gradient(45deg, #dcdcdc,#787afa,#A2E497,#5244FB);
     background-size: 300% 300%;
@@ -7,6 +7,7 @@ body{
     width: 100%;
     text-align: center;
 }
+
 /* Retirado do canal Willian Justan Cursos - tutorial de como criar um background gradiente animado :)*/
 @keyframes colors{
     0%{
@@ -24,6 +25,7 @@ body{
     color: #7c7dd8;
     text-decoration: none;
 }
+
 .divQuestionario:hover {
     transition: 0.3s;
     transform: scale(1.09);
@@ -39,12 +41,12 @@ body{
     width: 95%;
     
 }
+
 .adicionarPerguntas a:hover {
     transition: 0.3s;
     transform: scale(1.1);
     background-color: #7c7dd8;
 }
-
 
 h1 {
     color: white;
@@ -82,4 +84,29 @@ button {
     border-radius: 50px; 
     border: 3px solid white;
     
+}
+
+#navbar {
+    background-color: white;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    left: 1%;
+    bottom: 1%;
+    float: left;
+    text-align: left;
+    position: fixed;
+    
+}
+
+#navbar li {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+#navbar a:hover {
+    color: yellow;
 }
