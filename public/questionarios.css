@@ -110,3 +110,11 @@ a {
 #navbar a:hover {
     color: yellow;
 }
+
+.perguntaEscondida{
+    display:none;
+}
+.perguntaMostrar{
+    display: block;
+    background-color: white;
+}

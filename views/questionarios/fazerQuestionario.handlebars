@@ -5,7 +5,7 @@
 <h1>{{questionario.titulo}}</h1>
 <main>
     {{#each questionario.perguntas}}
-        <article id="pergunta{{@index}}">
+        <article id="pergunta{{@index}}" class="perguntaEscondida">
             <h2>{{this.titulo}}</h2>
             <section class="seccaoResposta">
                 {{#each this.respostas}}
@@ -16,6 +16,7 @@
                 <button class="botaoProx">Proxima Pergunta!</button>
             </section>
         </article>
+        
     {{/each}}
     
 </main>
