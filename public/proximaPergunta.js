@@ -4,7 +4,6 @@ let contadorPerguntaAtual =  0;
 
 let container = document.querySelector("main");
 
-
 let primeiraPergunta = document.querySelector("#pergunta0");
 primeiraPergunta.classList.remove("perguntaEscondida");
 primeiraPergunta.classList.add("perguntaMostrar");
