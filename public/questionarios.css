@@ -1,0 +1,120 @@
+body{   
+    background-image: url(imagens/fundo.png);
+    background: linear-gradient(45deg, #dcdcdc,#787afa,#A2E497,#5244FB);
+    background-size: 300% 300%;
+    animation: colors 15s ease infinite;
+    background-repeat: no-repeat;
+    width: 100%;
+    text-align: center;
+}
+
+/* Retirado do canal Willian Justan Cursos - tutorial de como criar um background gradiente animado :)*/
+@keyframes colors{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.adicionarPerguntas h1{
+    color: #7c7dd8;
+    text-decoration: none;
+}
+
+.divQuestionario:hover {
+    transition: 0.3s;
+    transform: scale(1.09);
+}
+
+.divQuestionario{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 30px;
+    padding: 5px;
+    margin: 2%; 
+    border: 10px ridge  white;
+    width: 95%;
+    
+}
+
+.adicionarPerguntas a:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+    background-color: #7c7dd8;
+}
+
+h1 {
+    color: white;
+    text-decoration: underline;
+    font-size: 350%;
+    font-family: Courier, monospace;
+}
+
+label {
+    font-size: 30px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    height: auto;
+}
+
+input, select,option{
+    padding: 2%;
+    font-size: 170%;
+    width: 60%;
+    height: 15px;
+    margin-bottom: 5%;
+}
+
+button {
+    margin-top: 1%;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.adicionarPerguntas {
+    background-color: rgb(235, 240, 243);
+    margin-left: 15%; 
+    margin-right: 15%;
+    padding: 5%;
+    border-radius: 50px; 
+    border: 3px solid white;
+    
+}
+
+#navbar {
+    background-color: white;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    left: 1%;
+    bottom: 1%;
+    float: left;
+    text-align: left;
+    position: fixed;
+    
+}
+
+#navbar li {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+#navbar a:hover {
+    color: yellow;
+}
+
+.perguntaEscondida{
+    display:none;
+}
+.perguntaMostrar{
+    display: block;
+    background-color: white;
+}

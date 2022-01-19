@@ -1,0 +1,32 @@
+
+    <form action="/questionarios/add" method="post">
+        <h1>Adicionar Questionário</h1>
+        <input type="number" hidden value="1" id="qnt" name="qntQuestoes">
+        <section class="adicionarPerguntas">
+            <label for="tituloQUestionario">Titulozinho:</label>
+            <input type="text" name="tituloQuestionario" required>
+            <br><br>
+            <article class="pergunta1">
+                <label for="tituloPergunta1">Pergunta 1:</label>
+                    <input type="text" name="tituloPergunta1" required> <br><br>
+                    <label for="pergunta1Respota1">Alternativa 1</label>
+                        <input type="text" name="pergunta1Resposta1" required> <br><br>
+                    <label for="pergunta1Respota2">Alternativa 2</label>
+                        <input type="text" name="pergunta1Resposta2" required> <br><br>
+                    <label for="pergunta1Respota3">Alternativa 3</label> 
+                        <input type="text" name="pergunta1Resposta3" required> <br><br>
+                    <label for="pergunta1Respota4">Alternativa 4</label> 
+                        <input type="text" name="pergunta1Resposta4" required>
+                        <br> <br> <br>
+                    <label for="respostaCertaPergunta1">Resposta Certa:</label>
+                        <select name="respostaCertaPergunta1" id="">
+                            <option value="0"> Alternativa 1</option>
+                            <option value="1"> Alternativa 2</option>
+                            <option value="2"> Alternativa 3</option>
+                            <option value="3"> Alternativa 4</option>
+                        </select>
+                </article>
+            </section>
+            <button id="novaPergunta">Outra Pergunta</button>
+        <button type="submit">Criar Questionario</button>
+    </form>

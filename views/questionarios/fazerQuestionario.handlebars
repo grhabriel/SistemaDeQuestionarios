@@ -1,0 +1,22 @@
+<input type="number" hidden value="{{questionario.quantidadePerguntas}}" id="quantidadePerguntas">
+
+
+<h1>{{questionario.titulo}}</h1>
+<main>
+    {{#each questionario.perguntas}}
+        <article id="pergunta{{@index}}" class="perguntaEscondida">
+            <h2>{{this.titulo}}</h2>
+            <section class="seccaoResposta">
+                {{#each this.respostas}}
+                    <input type="radio" value="{{@index}}" checked name="respostaPergunta{{@../index}}">
+                    <label for="respostaPergunta{{@../index}}">{{this}}</label>
+                {{/each}}
+                <br>
+                <button class="botaoProx">Proxima Pergunta!</button>
+            </section>
+        </article>
+        
+    {{/each}}
+    
+</main>
+<script src="/proximaPergunta.js"></script>

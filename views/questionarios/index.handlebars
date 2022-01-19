@@ -1,0 +1,16 @@
+<h1>Questionários</h1>
+
+<section class="adicionarPerguntas">
+    {{#each questionarios}}
+        <article class="divQuestionario">
+            <input type="text" name="identificação" hidden  id="id{{@index}}" value="{{_id}}" >
+            <h1>{{this.titulo}}</h1>
+            <p>Criado em: {{this.data}}</p>
+            <a href="/questionarios/fazer/{{_id}}">Entrar no questionario</a>
+            <p>Clique para entrar no questionário!</p>
+        </article>
+    {{else}}
+        <p class="alertaErro">Não existem questionarios cadastrados</p>
+    {{/each}}
+</section>
+<script src="/teste.js"></script>
