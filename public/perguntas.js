@@ -2,14 +2,13 @@ let contadorPerguntas = 1;
 
 botaoPergunta = document.querySelector("#novaPergunta");
 botaoPergunta.addEventListener('click',function(){
-    if(contadorPerguntas==9){
+    if(contadorPerguntas == 9){
         return;
     }
     let containerSection = document.querySelector(".adicionarPerguntas");
     let novaAreaPergunta = document.createElement("article");
     contadorPerguntas++;
-    novaAreaPergunta.classList.add(`pergunta${contadorPerguntas}`);
-    
+    novaAreaPergunta.classList.add(`pergunta${contadorPerguntas}`);  
     
     novaAreaPergunta.innerHTML = `  <label for="tituloPergunta${contadorPerguntas}">Pergunta ${contadorPerguntas}:</label>
     <input type="text" name="tituloPergunta${contadorPerguntas}" required> <br><br>

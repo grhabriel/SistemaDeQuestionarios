@@ -68,4 +68,3 @@ let botoesProximo = document.getElementsByClassName("botaoProx");
 for(botao of botoesProximo){
     botao.addEventListener("click",proximaPergunta);
 }
-

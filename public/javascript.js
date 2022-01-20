@@ -28,4 +28,3 @@ function fechaModal(e) {
     let janelaModalEl = document.querySelector('.modal');
     janelaModalEl.classList.remove('visivel');
 }
-

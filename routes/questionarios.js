@@ -7,7 +7,6 @@ require("../models/Questionario");
 const Questionarios = mongoose.model("questionarios");
 
 
-
 router.get("/",function(req,res){
     Questionarios.find().then(function(categorias){
         res.render("questionarios/index",{questionarios: categorias});
