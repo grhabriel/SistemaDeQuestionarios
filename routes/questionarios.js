@@ -1,4 +1,5 @@
 const express = require("express");
+const { redirect } = require("express/lib/response");
 const router = express.Router();
 const mongoose = require("mongoose");
 
@@ -64,17 +65,26 @@ router.get("/fazer/:id",function(req,res){
     })
     
 })
-
-router.post("/verificar",function(req,res){
-    let cont = 0;
-    let identificacao = req.body.idQuestionario;
-    let respostaSubmetida = req.body.respostaPergunta;
-    let respostaCorreta = req.body.correta;
-    if(respostaSubmetida == respostaCorreta){
-        cont++;
+function contabilizarAcertos(questionario,respostasSubmetidas){
+    let contadorAcertos = -1;
+    let quantidadePerguntas = questionario.quantidadePerguntas;
+    for(let i = 0; i<quantidadePerguntas;i++){
+        if(respostasSubmetidas[i] === questionario.perguntas[i].respostaCerta);{
+            console.log("Submeteu: "+ respostasSubmetidas[i]);
+            console.log("Certa: " + questionario.perguntas[i].respostaCerta);
+            contadorAcertos++;
+            console.log(contadorAcertos);
+        }
     }
-    res.send("Voce acertou "+cont + " Questões");
-    //Fazer um loop para poder contar quantas perguntas for preciso
+    return contadorAcertos;
+}
+
+router.get("/verificar/:id/:respostas",function(req,res){
+    Questionarios.findOne({_id:req.params.id}).then((questionario)=>{
+        res.send("voce acertou " + contabilizarAcertos(questionario,req.params.respostas));
+    }).catch((err)=>{
+        res.send("Erro ao encontrar questionario: ",err);
+    })
 });
 
 
