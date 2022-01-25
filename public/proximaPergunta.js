@@ -1,3 +1,4 @@
+
 /*   Variaveis Necessarias */
 let quantidadePerguntas = document.querySelector("#quantidadePerguntas").value
 let respostasSubmetidas = [];
@@ -52,7 +53,7 @@ function proximaPergunta(){
     //Sistema para enviar as respostas
     if(contadorPerguntaAtual == quantidadePerguntas){
         botaoEnviar = document.createElement("button");
-        botaoEnviar.innerHTML = "teste";
+        botaoEnviar.innerHTML = "Enviar";
         botaoEnviar.addEventListener("click",enviarRespostas);
         container.appendChild(botaoEnviar);
     }

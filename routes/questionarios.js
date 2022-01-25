@@ -1,3 +1,4 @@
+
 const express = require("express");
 const { redirect } = require("express/lib/response");
 const router = express.Router();
@@ -66,10 +67,10 @@ router.get("/fazer/:id",function(req,res){
     
 })
 function contabilizarAcertos(questionario,respostasSubmetidas){
-    let contadorAcertos = -1;
+    let contadorAcertos = 0;
     let quantidadePerguntas = questionario.quantidadePerguntas;
     for(let i = 0; i<quantidadePerguntas;i++){
-        if(respostasSubmetidas[i] === questionario.perguntas[i].respostaCerta);{
+        if(respostasSubmetidas[i] == questionario.perguntas[i].respostaCerta){
             console.log("Submeteu: "+ respostasSubmetidas[i]);
             console.log("Certa: " + questionario.perguntas[i].respostaCerta);
             contadorAcertos++;
@@ -80,10 +81,11 @@ function contabilizarAcertos(questionario,respostasSubmetidas){
 }
 
 router.get("/verificar/:id/:respostas",function(req,res){
+    console.log(req.params.respostas);
     Questionarios.findOne({_id:req.params.id}).then((questionario)=>{
         res.send("voce acertou " + contabilizarAcertos(questionario,req.params.respostas));
     }).catch((err)=>{
-        res.send("Erro ao encontrar questionario: ",err);
+        res.send("Erro ao encontrar questionario: "+ err);
     })
 });
 

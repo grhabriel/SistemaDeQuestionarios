@@ -89,7 +89,7 @@ h1{
     width: 300%;
 }
 
-#participantes{
+#participantes, #musica, #musicaOff{
     display: block;
     font-size: 100%;
     padding: 0.5%;
@@ -180,4 +180,3 @@ button.fecharModal{
 .pergunta{
     display: block;
 }
-
