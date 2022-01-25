@@ -75,8 +75,10 @@ input, select,option{
     width: 60%;
     height: 15px;
     margin-bottom: 5%;
+} 
+#manterConectado {
+    width: 13%;
 }
-
 button {
     margin-top: 1%;
     padding: 20px;

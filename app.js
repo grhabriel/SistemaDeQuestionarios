@@ -1,10 +1,12 @@
-
 const express = require("express");
 const handlebars = require("express-handlebars")
 const app = express();
 const path = require("path"); // arquivos
 const mongoose = require("mongoose"); //Banco de dados MongoDb
-//const flash = require("connect-flash");
+
+
+const flash = require("connect-flash");
+const session = require("express-session");
 
 //Rotas
 const questionarios = require("./routes/questionarios");
@@ -15,7 +17,18 @@ const Questionarios = mongoose.model("questionarios");
 
 //Configurações
     //Sessão
-    //app.use(flash());
+    app.use(session({
+        secret:"sistema",
+        resave: true,
+        saveUninitialized: true
+    }));
+    app.use(flash());
+    app.use(function(req,res,next){
+        res.locals.success_msg = req.flash("sucess_msg");
+        res.locals.error_msg = req.flash("error_msg");
+        next();
+    });
+
     //Banco de dados
         mongoose.Promise = global.Promise;
         mongoose.connect("mongodb://localhost/SistemaQuestionarios").then(function(){
@@ -23,15 +36,7 @@ const Questionarios = mongoose.model("questionarios");
         }).catch(function(err){
             console.log("Erro: "+err);
         })
-    //MidleWare
-    // app.use(function(req,res,next){
-    //     res.locals.success_msg = req.flash("sucess_msg");
-    //     res.locals.error_msg = req.flash("error_msg");
-    //     res.locals.user = req.user || null;
-    //     next();
-        
-    // });
-
+    
     //Configurando bodyparser
     app.use(express.urlencoded({extended:true}));
     app.use(express.json());

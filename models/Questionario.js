@@ -1,6 +1,17 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const celula = {
+    nome:{
+        type: String,
+        required: true
+    },
+    pontuacao: {
+        type:String,
+        required: true
+    }
+}
+
 const pergunta ={
     titulo:{
         type: String,
@@ -32,6 +43,7 @@ const Questionario = new Schema({
     //     ref: '_id',
     //     required: true
     // }
+    tabela: [celula]
 });
 
 mongoose.model("questionarios",Questionario);

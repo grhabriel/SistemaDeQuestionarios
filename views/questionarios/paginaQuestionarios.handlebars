@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/principal.css">
+    <link rel="stylesheet" href="/questionarios.css">
+    <title>Questionario {{titulo}}</title>
+</head>
+<body>
+
+    <h1>{{questionario.titulo}}</h1>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Pontuação</th>
+        </tr>
+        <tr>
+            {{#each questionario.tabela}}
+                <td>{{this.nome}}</td>
+            {{else}}
+                <td>Niguem fez esse questionario ainda</td>
+            {{/each}}
+        </tr>
+        <tr>
+            {{#each questionario.tabela}}
+                <td>{{this.pontuacao}}</td>
+            {{else}}
+                
+            {{/each}}
+        </tr>
+    </table>
+</body>
+<input type="text" name="" hidden value="">

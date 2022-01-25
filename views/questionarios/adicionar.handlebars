@@ -6,12 +6,11 @@
 </head>
 <body>
     
-    <div>
-        <audio id="som" src="/audio/soltaosomdj.mp3" autoplay loop></audio>
-        <button id="musica"><img id="mutado" src="/imagens/mute.png"></button>
-        <button id="musicaOff"><img src="/imagens/mute.png"></button>
+    <div id ="botoesParticEMusica">
+        <audio id="som" src="/audio/soltaosomdj.mp3"></audio>
+        <button id="musica"><img src="/imagens/mute.png"></button>
     </div>
-
+    
     <form action="/questionarios/add" method="post">
         <h1>Adicionar Questionário</h1>
         <input type="number" hidden value="1" id="qnt" name="qntQuestoes">
@@ -41,7 +40,8 @@
                 </article>
             </section>
             <button id="novaPergunta">Outra Pergunta</button>
-        <button type="submit">Criar Questionario</button>
+            <button type="submit">Criar Questionario</button>
+        <script src="/perguntas.js"></script>
         <script src="/music.js"></script>
     </form>
 </body>
