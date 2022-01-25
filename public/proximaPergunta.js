@@ -32,12 +32,9 @@ function trocarClasses(elemento){
 
 function enviarRespostas(){
     let identificacao = retornarId();
-    let stringRespostas = "";
-    for(let i = 0; i<respostasSubmetidas.length;i++){
-        stringRespostas+=respostasSubmetidas[i];
-    }
     console.log(stringRespostas);
-    window.location.replace(`/questionarios/verificar/${identificacao}/${stringRespostas}`);
+
+    //window.location.replace(`/questionarios//verificar/${nome}/${identificacao}/${stringRespostas}`);
 }
 
 
@@ -52,10 +49,28 @@ function proximaPergunta(){
     
     //Sistema para enviar as respostas
     if(contadorPerguntaAtual == quantidadePerguntas){
+        let stringRespostas = "";
+        for(let i = 0; i<respostasSubmetidas.length;i++){
+            stringRespostas+=respostasSubmetidas[i];
+        }
+        let nome = localStorage.getItem("nome");
+        
+        formulario = document.createElement("form");
+        formulario.setAttribute("action",`/questionarios/checkarRespostas`)
+        formulario.setAttribute("method","post");
+        formulario.method = "post";    
+        
+        formulario.innerHTML = `<input type="text" name="nome" hidden value="${nome}">
+                                <input type="text" name="respostas" hidden value="${stringRespostas}">
+                                <input type="text" name="id" hidden value="${retornarId()}">`
+        
         botaoEnviar = document.createElement("button");
+        botaoEnviar.type = "submit";
         botaoEnviar.innerHTML = "Enviar";
-        botaoEnviar.addEventListener("click",enviarRespostas);
-        container.appendChild(botaoEnviar);
+        
+        
+        formulario.appendChild(botaoEnviar);
+        container.appendChild(formulario);
     }
 
     let novaPergunta = document.querySelector(`#pergunta${contadorPerguntaAtual}`);

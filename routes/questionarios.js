@@ -66,6 +66,7 @@ router.get("/fazer/:id",function(req,res){
     })
     
 })
+
 function contabilizarAcertos(questionario,respostasSubmetidas){
     let contadorAcertos = 0;
     let quantidadePerguntas = questionario.quantidadePerguntas;
@@ -80,15 +81,49 @@ function contabilizarAcertos(questionario,respostasSubmetidas){
     return contadorAcertos;
 }
 
-router.get("/verificar/:id/:respostas",function(req,res){
-    console.log(req.params.respostas);
-    Questionarios.findOne({_id:req.params.id}).then((questionario)=>{
-        res.send("voce acertou " + contabilizarAcertos(questionario,req.params.respostas));
+
+// router.get("/verificar/:nome/:id/:respostas",function(req,res){
+//     console.log(req.params.respostas);
+//     Questionarios.findOne({_id:req.params.id}).then((questionario)=>{
+//         let total = contabilizarAcertos(questionario,req.params.respostas);
+//         const novoRegistro = {
+//             nome: req.params.nome,
+//             pontuacao: total
+//         }
+
+//         questionario.tabela.push(novoRegistro);
+//         res.render("questionarios/finalizado",{questionario: questionario,
+//                                                mensagem: `AMIGOS DA REDE  BOBO ${total}`});
+
+//     }).catch((err)=>{
+//         res.send("Erro ao encontrar questionario: "+ err);
+//     })
+// });
+
+router.post("/checkarRespostas",function(req,res){
+    Questionarios.findOne({_id:req.body.id}).then((questionario)=>{
+        let total = contabilizarAcertos(questionario,req.body.respostas);
+
+        const novoRegistro = {
+            nome:req.params.nome,
+            pontuacao:total
+        };
+        questionario.tabela.push(novoRegistro);
+        res.flash("sucess_msg",`Voce acertou ${total} questões`);
+
+        res.redirect(`/questionarios/paginaQuestionarios/${req.body.id}`);
     }).catch((err)=>{
-        res.send("Erro ao encontrar questionario: "+ err);
+        res.send("Erro"+err);
+    })
+})
+
+router.get("/paginaQuestionario/:id",function(req,res){
+    Questionarios.findOne({_id:req.params.id}).then((questionario)=>{
+        res.render("questionarios/paginaQuestionarios",{questionario: questionario,});
+    }).catch((err)=>{
+        res.send("Questionario invalido"+err);
     })
 });
-
 
 
 

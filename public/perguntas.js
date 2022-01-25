@@ -1,6 +1,7 @@
 let contadorPerguntas = 1;
 
 botaoPergunta = document.querySelector("#novaPergunta");
+alert("teste");
 botaoPergunta.addEventListener('click',function(){
     if(contadorPerguntas==9){
         return;
