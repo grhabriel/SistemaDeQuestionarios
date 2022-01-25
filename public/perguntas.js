@@ -33,4 +33,5 @@ botaoPergunta.addEventListener('click',function(){
     mudarInput  = document.querySelector("#qnt");  
     mudarInput.value = contadorPerguntas;  
     containerSection.appendChild(novaAreaPergunta);
+
 });

@@ -1,3 +1,4 @@
+
 let botaoJogar = document.querySelector("#jogar");
 
 botaoJogar.addEventListener('click', function () {
@@ -28,4 +29,3 @@ function fechaModal(e) {
     let janelaModalEl = document.querySelector('.modal');
     janelaModalEl.classList.remove('visivel');
 }
-
