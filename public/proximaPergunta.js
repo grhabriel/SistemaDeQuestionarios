@@ -43,7 +43,6 @@ trocarClasses(primeiraPergunta);
 function proximaPergunta(){
     let input = document.querySelector(`input[name="respostaPergunta${contadorPerguntaAtual}"]:checked`);
     respostasSubmetidas.push(input.value);
-
     deletarElementos(container,2);
     contadorPerguntaAtual++;
     
@@ -77,6 +76,7 @@ function proximaPergunta(){
     if(!novaPergunta){
         return null;
     }
+    
     trocarClasses(novaPergunta);
 }
 

@@ -44,7 +44,8 @@ router.post("/add",function(req,res){
     const novoQuestionario = {
         titulo: todosOsRegistros[1][1],
         perguntas: arrayPerguntas,
-        quantidadePerguntas: quantidadeQuestoes
+        quantidadePerguntas: quantidadeQuestoes,
+        tabela: []
     }
 
     console.log(novoQuestionario);
@@ -82,44 +83,45 @@ function contabilizarAcertos(questionario,respostasSubmetidas){
 }
 
 
-// router.get("/verificar/:nome/:id/:respostas",function(req,res){
-//     console.log(req.params.respostas);
-//     Questionarios.findOne({_id:req.params.id}).then((questionario)=>{
-//         let total = contabilizarAcertos(questionario,req.params.respostas);
-//         const novoRegistro = {
-//             nome: req.params.nome,
-//             pontuacao: total
-//         }
-
-//         questionario.tabela.push(novoRegistro);
-//         res.render("questionarios/finalizado",{questionario: questionario,
-//                                                mensagem: `AMIGOS DA REDE  BOBO ${total}`});
-
-//     }).catch((err)=>{
-//         res.send("Erro ao encontrar questionario: "+ err);
-//     })
-// });
 
 router.post("/checkarRespostas",function(req,res){
     Questionarios.findOne({_id:req.body.id}).then((questionario)=>{
+        
+        
         let total = contabilizarAcertos(questionario,req.body.respostas);
 
         const novoRegistro = {
-            nome:req.params.nome,
+            nome:req.body.nome,
             pontuacao:total
         };
-        questionario.tabela.push(novoRegistro);
-        res.flash("sucess_msg",`Voce acertou ${total} questões`);
+        let registros = questionario.tabela
+        registros.push(novoRegistro);
+        
+        Questionarios.updateOne({_id:req.body.id},
+            {tabela:registros},function(err,docs){
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log("Atualizado com sucesso: ",docs);
+                }
+            });
 
-        res.redirect(`/questionarios/paginaQuestionarios/${req.body.id}`);
+        req.flash("success_msg",`Voce acertou ${total} questões`);
+        res.redirect(`/questionarios/paginaQuestionario/${req.body.id}`);
     }).catch((err)=>{
         res.send("Erro"+err);
     })
 })
 
 router.get("/paginaQuestionario/:id",function(req,res){
+    
     Questionarios.findOne({_id:req.params.id}).then((questionario)=>{
-        res.render("questionarios/paginaQuestionarios",{questionario: questionario,});
+        let mensagem = req.flash();
+        console.log()
+        console.log(questionario.tabela);
+        res.render("questionarios/paginaQuestionarios",{questionario: questionario,
+                                                        mensagem: mensagem});
     }).catch((err)=>{
         res.send("Questionario invalido"+err);
     })

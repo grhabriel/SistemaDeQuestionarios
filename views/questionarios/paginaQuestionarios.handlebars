@@ -2,30 +2,25 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/principal.css">
     <link rel="stylesheet" href="/questionarios.css">
-    <title>Questionario {{titulo}}</title>
+    <title>Questionario {{questionario.titulo}}</title>
 </head>
 <body>
+    {{#if mensagem.success_msg}}
+        <span class="retornoAcertos">{{mensagem.success_msg}}</span>
+    {{/if}}
 
+    
     <h1>{{questionario.titulo}}</h1>
     <table>
         <tr>
             <th>Nome</th>
             <th>Pontuação</th>
         </tr>
-        <tr>
-            {{#each questionario.tabela}}
+        {{#each questionario.tabela}}
+            <tr>        
                 <td>{{this.nome}}</td>
-            {{else}}
-                <td>Niguem fez esse questionario ainda</td>
-            {{/each}}
-        </tr>
-        <tr>
-            {{#each questionario.tabela}}
                 <td>{{this.pontuacao}}</td>
-            {{else}}
-                
-            {{/each}}
-        </tr>
+            </tr>
+        {{/each}}
     </table>
 </body>
-<input type="text" name="" hidden value="">
