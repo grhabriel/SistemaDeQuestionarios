@@ -28,7 +28,7 @@ h1{
 
 }
 
-#jogar, #criar, #entrar, #login, #cadastrar {
+#jogar, #criar, #entrar, #login, #cadastrar, #deslogar {
     display: block;
     font-size: 120%;
     padding: 10px;
@@ -48,7 +48,7 @@ h1{
     background-color: #7c7dd8;
 }
 
-#criar:hover {
+#criar:hover, #deslogar:hover {
     transition: 0.3s;
     transform: scale(1.1);
     background-color: #7c7dd8;
