@@ -56,15 +56,14 @@ body{
 }
 
 h1 {
-    color: white;
-    text-decoration: underline;
+    color: black;
     font-size: 350%;
-    font-family: Courier, monospace;
+    font-family: 'Questrial', sans-serif;
 }
 
 label {
     font-size: 30px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Lucida Sans', sans-serif;
     color: black;
     height: auto;
 }
@@ -252,4 +251,55 @@ button:hover {
 button:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+table {
+    background-color:rgb(218, 232, 251);
+    width: 30%;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: auto;
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+
+th {
+    /*background: linear-gradient(to left,#5F9EA0,#9370DB); */
+    border-bottom: 3px solid black;
+}
+td {
+    font-size: 200%;
+    padding: 3%;
+}
+
+#first {
+    background: linear-gradient(45deg,#5F9EA0,#9370DB);
+    font-size: 250%;
+}
+
+tr{
+    padding: 5%;
+    font-family: 'Gill Sans', sans-serif;
+}
+
+.retornoAcertos {
+    position: absolute;
+    left: 0.5%;
+    font-size: 170%;
+    font-family: 'verdana';
+    background-color:rgb(218, 232, 251);
+    border: 3px dashed black;
+    border-radius: 20px;
+    padding: 2%;
+    margin-bottom: 3%;
+    animation: sumir 2s ease-in-out 0s infinite alternate;
+}
+
+@keyframes sumir {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+#tituloQuestionario{
+    font-family: 'Maiandra GD', sans-serif;
 }
