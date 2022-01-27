@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/principal.css">
     <link rel="stylesheet" href="/questionarios.css">
-    <title>Questionario {{questionario.titulo}}</title>
+    <title>Quiz {{questionario.titulo}}</title>
 </head>
 <body>
     {{#if mensagem.success_msg}}
@@ -10,9 +10,9 @@
     {{/if}}
 
     
-    <h1>{{questionario.titulo}}</h1>
+    <h1 id="tituloQuestionario">{{questionario.titulo}}</h1>
     <table>
-        <tr>
+        <tr id="first">
             <th>Nome</th>
             <th>Pontuação</th>
         </tr>
