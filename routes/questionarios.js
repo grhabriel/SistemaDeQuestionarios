@@ -107,7 +107,7 @@ router.post("/checkarRespostas",function(req,res){
                 }
             });
 
-        req.flash("success_msg",`Voce acertou ${total} questões`);
+        req.flash("success_msg",`Você acertou ${total} questões`);
         res.redirect(`/questionarios/paginaQuestionario/${req.body.id}`);
     }).catch((err)=>{
         res.send("Erro"+err);
