@@ -67,6 +67,14 @@ router.get("/fazer/:id",function(req,res){
     })
     
 })
+router.get("/sincrono/:id",function(req,res){
+
+    Questionarios.findOne({_id:req.params.id}).then((questionario) =>{
+        res.render("questionarios/sincrono",{questionario:questionario});
+    }).catch((err)=>{
+        console.log("Erro: "+err);
+    })
+})
 
 function contabilizarAcertos(questionario,respostasSubmetidas){
     let contadorAcertos = 0;
@@ -126,6 +134,7 @@ router.get("/paginaQuestionario/:id",function(req,res){
         res.send("Questionario invalido"+err);
     })
 });
+
 
 
 

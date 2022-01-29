@@ -9,14 +9,14 @@
     <div id ="botoesParticEMusica">
         <audio id="som" src="/audio/soltaosomdj.mp3"></audio>
         <button id="musica"><img src="/imagens/mute.png"></button>
-    </div>
+    </div> 
     
     <form action="/questionarios/add" method="post">
         <h1>Adicionar Questionário</h1>
         <input type="number" hidden value="1" id="qnt" name="qntQuestoes">
         <section class="adicionarPerguntas">
             <label for="tituloQUestionario">Titulozinho:</label>
-            <input type="text" name="tituloQuestionario" required>
+            <input type="text" name="tituloQuestionario" maxlength="20" required>
             <br><br>
             <article class="pergunta1">
                 <label for="tituloPergunta1">Pergunta 1:</label>
@@ -41,6 +41,7 @@
             </section>
             <button id="novaPergunta">Outra Pergunta</button>
             <button type="submit">Criar Questionario</button>
+            <br><br><br>
         <script src="/perguntas.js"></script>
         <script src="/music.js"></script>
     </form>

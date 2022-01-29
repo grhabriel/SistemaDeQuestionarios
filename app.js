@@ -1,9 +1,13 @@
 const express = require("express");
 const handlebars = require("express-handlebars")
 const app = express();
+const http = require("http");
+const server = http.createServer(app);
 const path = require("path"); // arquivos
 const mongoose = require("mongoose"); //Banco de dados MongoDb
 
+const {Server} = require("socket.io");
+const io = new Server(server);
 
 
 const session = require("express-session");
@@ -64,9 +68,18 @@ const Questionarios = mongoose.model("questionarios");
         res.sendFile("index");
     });
 
+    //WebSocket
+    io.on("connection",(socket)=>{
+        socket.on("enviarPergunta",(valor)=>{
+            io.emit("AlertaPagina",{valor:1});
+            console.log("ALGUEM ENVIOU UMA PERGUNTA");
+        })
+        console.log("Sabado dia ruim");
+    })
+
 //Servidor
     const porta = 8081;
-    app.listen(porta,function(){
+    server.listen(porta,function(){
         console.log("Servidor rodando na porta" + porta);
     });
 
