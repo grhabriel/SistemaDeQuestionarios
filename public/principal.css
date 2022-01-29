@@ -76,6 +76,7 @@ h1{
     border-radius: 7%;
     box-shadow: 0 5px 1px rgba(0,0,0,.2);
     margin: 150px auto;
+    
 }
 
 #apelido, #codigo{
@@ -85,11 +86,9 @@ h1{
     margin: 10px auto;
 }
 
-#inicial img {
-    height: 300%;
-    width: 300%;
-
-}
+/*#inicial img {
+    /*height: 300%;
+} */
 
 #participantes, #musica, #musicaOff{
     display: inline;
@@ -106,8 +105,13 @@ h1{
 }
 
 #botoesParticEMusica{
-    text-align:left;
-}
+    text-align: left;
+    margin: auto;
+} 
+#botoesParticEMusica img{
+    margin: auto;
+    
+} 
 
 .modal{
     display: none;

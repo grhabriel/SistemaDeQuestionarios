@@ -1,0 +1,35 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/principal.css">
+    <link rel="stylesheet" href="/questionarios.css">
+    <title>Quiztoon! {{questionario.titulo}}</title>
+</head>
+<body>
+
+    <input type="number" hidden value="{{questionario.quantidadePerguntas}}" id="quantidadePerguntas">
+
+
+    <h1>{{questionario.titulo}}</h1>
+    <main>
+        {{#each questionario.perguntas}}
+            <article id="pergunta{{@index}}" class="perguntaEscondida">
+                <h2>{{this.titulo}}</h2>
+                <section class="seccaoResposta">
+                    {{#each this.respostas}}
+                        <input type="radio" value="{{@index}}" checked name="respostaPergunta{{@../index}}">
+                        <label for="respostaPergunta{{@../index}}">{{this}}</label>
+                    {{/each}}
+                    <br>
+                    <button class="botaoProx">Proxima Pergunta!</button>
+                </section>
+            </article>
+            
+        {{/each}}
+        
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/webSocket.js"></script>
+    <script src="/botoes.js"></script>
+    
+</body>

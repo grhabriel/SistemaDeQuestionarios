@@ -9,18 +9,17 @@
         <audio id="som" src="/audio/soltaosomdj.mp3"></audio>
         <button id="musica"><img src="/imagens/mute.png"></button>
         <button id="musicaOff"><img src="/imagens/mute.png"></button>
-    </div>
-    
+    </div> 
     <h1>Questionários</h1>
-
     <section class="adicionarPerguntas">
+        
         {{#each questionarios}}
             <article class="divQuestionario">
                 <input type="text" name="identificação" hidden  id="id{{@index}}" value="{{_id}}" >
                 <h1>{{this.titulo}}</h1>
                 <p>Criado em: {{this.data}}</p>
                 <a href="/questionarios/fazer/{{_id}}">Entrar no questionario</a>
-                <p>Clique para entrar no questionário!</p>
+                <a href="/questionarios/sincrono/{{_id}}">Questionario de Forma Sincrona</a>
             </article>
         {{else}}
             <p class="alertaErro">Não existem questionarios cadastrados</p>
@@ -28,4 +27,7 @@
     </section>
     <script src="/teste.js"></script>
     <script src="/music.js"></script>
-</bpdy>
+
+    <a id="voltar-para-topo" href="#top">↑</a>
+
+</body>

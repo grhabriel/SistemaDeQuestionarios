@@ -30,7 +30,8 @@ body{
     display:flex;
     flex-wrap: wrap;
     padding: auto;
-    justify-content: space-between;
+    justify-content: space-between; 
+    margin-bottom: 2%;
 }
 
 .divQuestionario:hover {
@@ -58,7 +59,7 @@ body{
 h1 {
     color: black;
     font-size: 350%;
-    font-family: 'Questrial', sans-serif;
+    font-family: 'Maiandra GD', sans-serif;
 }
 
 label {
@@ -77,11 +78,6 @@ input, select,option{
 } 
 #manterConectado {
     width: 13%;
-}
-button {
-    margin-top: 1%;
-    padding: 20px;
-    font-size: 20px;
 }
 
 .adicionarPerguntas {
@@ -188,6 +184,7 @@ nav p:hover {
     bottom: 12.5px;
     float: left;
     margin-right: 10px;
+    padding: 5px;
 }
 
 /* MUSIQUINHA TUTS TUTS VEM CURTIR O NATAL*/
@@ -218,8 +215,8 @@ nav p:hover {
 .perguntaMostrar  input{
     width: 5%;
 }
-
- button {
+ 
+button {
   align-items: center;
   background-color: #FCFCFD;
   border-radius: 8px;
@@ -227,7 +224,6 @@ nav p:hover {
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
   color: #36395A;
   cursor: pointer;
-  display: inline-flex; 
   height: 100px;
   justify-content: center;
   padding-left: 3%;
@@ -237,6 +233,11 @@ nav p:hover {
   transition: box-shadow .15s,transform .05s;
   will-change: box-shadow,transform;
   font-size: 180%;
+  
+  padding: 20px;
+  font-size: 20px;
+  display: inline;
+  margin: auto;
 }
 
 button:focus {
@@ -261,6 +262,7 @@ table {
     margin: auto;
     border-collapse: collapse;
     border: 3px solid black;
+    margin-bottom: 3%;
 }
 
 th {
@@ -302,4 +304,20 @@ tr{
 
 #tituloQuestionario{
     font-family: 'Maiandra GD', sans-serif;
+}
+
+#voltar-para-topo {
+    color: black;
+    border: 5px solid black;
+    border-radius: 60%;
+    padding: 10px;
+    font-size: 45px;
+    width: 30px;
+    height: 38px;
+    line-height: 0.7em;
+    bottom: 50px;
+    right: 15px;
+    text-align: center;
+    text-decoration: none;
+    position: fixed;
 }
