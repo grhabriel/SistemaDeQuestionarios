@@ -76,6 +76,7 @@ input, select,option{
     height: 15px;
     margin-bottom: 5%;
 } 
+
 #manterConectado {
     width: 13%;
 }
@@ -118,6 +119,7 @@ a {
 .perguntaEscondida{
     display:none;
 }
+
 .perguntaMostrar{
     display: block;
     background-color: white;
@@ -209,8 +211,10 @@ nav p:hover {
     margin-left: 4%;
     margin-right: 4%;
 }
+
 .perguntaMostrar h2{
-    font-size: 280%;
+    font-size: 260%;
+    font-family: 'Arial', sans-serif;
 }
 .perguntaMostrar  input{
     width: 5%;
@@ -297,6 +301,7 @@ tr{
     animation: sumir 2s ease-in-out 0s infinite alternate;
 }
 
+
 @keyframes sumir {
     from {opacity: 1;}
     to {opacity: 0;}
@@ -320,4 +325,9 @@ tr{
     text-align: center;
     text-decoration: none;
     position: fixed;
+}
+
+#logo {
+    height: 40%;
+    width: 40%;
 }
