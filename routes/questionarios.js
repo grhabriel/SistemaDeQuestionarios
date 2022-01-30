@@ -67,7 +67,7 @@ router.get("/fazer/:id",function(req,res){
     })
     
 })
-router.get("/sincrono/:id",function(req,res){
+router.get("/sincrono/:nomeSala/:id",function(req,res){
 
     Questionarios.findOne({_id:req.params.id}).then((questionario) =>{
         res.render("questionarios/sincrono",{questionario:questionario});

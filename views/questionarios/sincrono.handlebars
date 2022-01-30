@@ -8,6 +8,13 @@
 <body>
 
     <input type="number" hidden value="{{questionario.quantidadePerguntas}}" id="quantidadePerguntas">
+    <div>
+        <div class="corpoModal">
+            <h2>Nome da Sala</h2>
+            <p>Link da sala</p>
+        </div>
+        <button>Comecar</button>
+    </div>
 
 
     <h1>{{questionario.titulo}}</h1>
@@ -28,6 +35,14 @@
         {{/each}}
         
     </main>
+    <div id="containerChat">
+        <div id="chat">
+            <h3>Bate Papo com as pessoas da sala</h3>
+        </div>
+
+        <input type="text" id="mensagem">
+        <button id="enviarMMensagem">Enviar</button>
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/webSocket.js"></script>

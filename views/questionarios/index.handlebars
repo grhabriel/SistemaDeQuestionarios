@@ -19,7 +19,11 @@
                 <input type="text" name="identificação" hidden  id="id{{@index}}" value="{{_id}}" >
                 <h1>{{this.titulo}}</h1>
                 <p>Criado em: {{this.data}}</p>
+                
                 <a href="/questionarios/fazer/{{_id}}">Entrar no questionario</a><br><br>
+        
+                <span data-id = "{{_id}}" class="salaSincrona">Criar sala Sincrona</span>
+                
                 <a href="/questionarios/sincrono/{{_id}}">Questionario de Forma Sincrona</a>
             </article>
         {{else}}

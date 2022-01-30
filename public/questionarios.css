@@ -331,3 +331,23 @@ tr{
     height: 40%;
     width: 40%;
 }
+
+
+#containerChat{
+    position: fixed;
+    right: 5px;
+    bottom: 10px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1%;
+}
+#chat{
+    margin:4%;
+    border: 1px solid black;
+}
+
+#chat p{
+    text-align: justify;
+    font-size:larger;
+    margin: 5px;
+}

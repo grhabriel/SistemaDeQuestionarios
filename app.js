@@ -70,11 +70,22 @@ const Questionarios = mongoose.model("questionarios");
 
     //WebSocket
     io.on("connection",(socket)=>{
-        socket.on("enviarPergunta",(valor)=>{
-            io.emit("AlertaPagina",{valor:1});
-            console.log("ALGUEM ENVIOU UMA PERGUNTA");
+        let room
+        socket.on("disconnect",(sala)=>{
+            io.to(room).emit("mensagemRecebida",{nome:"Servidor",mensagem:"Um usuario se desconectou"})
         })
-        console.log("Sabado dia ruim");
+        socket.on("entrarSala",(sala)=>{
+            room = sala;
+            console.log(sala); 
+            socket.join(sala);
+            io.to(room).emit("mensagemRecebida",{nome:"Servidor",mensagem:"Novo usuario se conectou"})
+        })
+        socket.on("clickPergunta",(val) =>{
+            io.to(room).emit("proximaPergunta");
+        })
+        socket.on("mensagemEnviada",(dadoRecebido)=>{
+            io.to(room).emit("mensagemRecebida",dadoRecebido);
+        })
     })
 
 //Servidor
