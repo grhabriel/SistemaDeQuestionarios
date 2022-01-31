@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.1.8",
+    "socket.io": "^4.4.1"
+  },
+  "name": "trabalho-pratico-2",
+  "description": "Sitezinho que permite o usuário criar e responder a quizzes.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grhabriel/SistemaDeQuestionarios.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grhabriel/SistemaDeQuestionarios/issues"
+  },
+  "homepage": "https://github.com/grhabriel/SistemaDeQuestionarios#readme"
+}
