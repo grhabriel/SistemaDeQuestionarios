@@ -21,6 +21,17 @@ function entrarSala(){
 
 entrarSala();
 
+function retornarId(){
+    url = window.location.pathname;
+    let id = "";
+    for(let i = url.lastIndexOf("fazer/")+6;i<url.length;i++){
+        id+=url[i]; 
+    }
+    alert(id);
+    return id;
+}
+
+
 function enviarAoServer(){
     socket.emit("clickPergunta",1);
 }
@@ -33,7 +44,7 @@ for(botao of botoesProximo){
 function retornarId(){
     url = window.location.pathname;
     let id = "";
-    for(let i = url.lastIndexOf("fazer/")+6;i<url.length;i++){
+    for(let i = url.lastIndexOf("/")+1;i<url.length;i++){
         id+=url[i]; 
     }
     return id;
@@ -103,6 +114,8 @@ function proximaPergunta(){
 function enviar(){
     let campoMensagem = document.querySelector("#mensagem");
     let mensagem = campoMensagem.value;
+    if(mensagem == "")
+        return;
     let dados = {
         mensagem: mensagem,
         nome: window.localStorage.getItem("nome")
@@ -113,6 +126,13 @@ function enviar(){
 
 let botaoEnviar = document.querySelector("#enviarMMensagem");
 botaoEnviar.addEventListener("click",enviar);
+
+let campoMensagem = document.querySelector("#mensagem");
+campoMensagem.addEventListener('keyup', function (e)
+{
+    if (e.key === "Enter")
+    enviar();
+});
 
 
 

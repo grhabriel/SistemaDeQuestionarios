@@ -8,8 +8,8 @@
 <body>
     <div id="botoesParticEMusica">
         <audio id="som" src="/audio/soltaosomdj.mp3" loop></audio>
-        <button id="musica"><img src="/imagens/mute.png"></button>
-        <button id="musicaOff"><img src="/imagens/mute.png"></button>
+        <button id="musica" class="botoesMenu"><img src="/imagens/mute.png"></button>
+        
     </div> 
     <h1>Questionários</h1>
     <section class="adicionarPerguntas">
@@ -24,7 +24,6 @@
         
                 <span data-id = "{{_id}}" class="salaSincrona">Criar sala Sincrona</span>
                 
-                <a href="/questionarios/sincrono/{{_id}}">Questionario de Forma Sincrona</a>
             </article>
         {{else}}
             <p class="alertaErro">Não existem questionarios cadastrados</p>
