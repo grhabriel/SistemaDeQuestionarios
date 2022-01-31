@@ -50,7 +50,7 @@ body{
     width: 42%;
 }
 
-.adicionarPerguntas a:hover {
+.adicionarPerguntas a:hover, .adicionarPerguntas span:hover {
     transition: 0.3s;
     transform: scale(1.1);
     background-color: #7c7dd8;
@@ -171,16 +171,6 @@ nav p:hover {
 } 
 
 .botao {
-    /* width: 33%;
-    display: inline-block;
-    display: flex;
-    justify-content: center;
-    opacity: 1;
-    display: block;
-    font-size: 100%;
-    height: 2%;
-    cursor: pointer;
-    background-color: rgb(255, 255, 255, 0); */
     width: 50px;
     position: relative;
     bottom: 12.5px;
@@ -193,15 +183,6 @@ nav p:hover {
 #musicaOff{
     display: none;
 }
-
-/*#musica {
-   display: flex;
-   justify-content: center;
-   height: 4%;
-   width: 4%;
-} */
-
-
 
 /* Pagina de fazer questionario */
 .perguntaMostrar {
@@ -219,9 +200,13 @@ nav p:hover {
 .perguntaMostrar  input{
     width: 5%;
 }
- 
-button {
-  align-items: center;
+
+.botoesMenu{
+    border: none;
+    text-align: center;
+}
+
+button:not(.botoesMenu) {
   background-color: #FCFCFD;
   border-radius: 8px;
   border-width: 0;
@@ -237,23 +222,21 @@ button {
   transition: box-shadow .15s,transform .05s;
   will-change: box-shadow,transform;
   font-size: 180%;
-  
   padding: 20px;
   font-size: 20px;
   display: inline;
-  margin: auto;
-}
+} 
 
-button:focus {
+button:not(.botoesMenu):focus {
   box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
 
-button:hover {
+button:not(.botoesMenu):hover {
   box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
-button:active {
+button:not(.botoesMenu):active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
 }
@@ -341,13 +324,55 @@ tr{
     border-radius: 8px;
     padding: 1%;
 }
+
 #chat{
     margin:4%;
     border: 1px solid black;
+    max-height: 200px;
+    position: relative;
+    /* white-space: nowrap; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: whitesmoke;
+}
+
+#containerChat {
+    max-height: 400px;
+    max-width: 25%;
+    position: absolute;
+    bottom: 2%;
+    width: auto;
+    border: 1px solid black;
+    right: 1.4%;
+    background:linear-gradient(#A2E497,#7c7dd8);
+    box-shadow: 4px 3px 3px  rgba(0, 0, 0, 0.76);
+    border: 3px solid black;
+    
 }
 
 #chat p{
     text-align: justify;
-    font-size:larger;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 5px;
+    padding: 1%;
+    word-wrap: break-word;
+}
+
+.salaSincrona{
+    cursor: pointer;
+}
+#containerChat h3{
+    font-size: 160%;
+    font-family: 'Maiandra GD', sans-serif;
+}
+
+#enviarMMensagem{
+    border-radius: 70%;
+    height: 70px;
+}
+
+#enviarMMensagem img {
+    height: 30px;
+    width: 30px;
 }
