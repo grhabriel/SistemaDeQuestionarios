@@ -35,11 +35,11 @@ const Questionarios = mongoose.model("questionarios");
         res.locals.error_msg = req.flash("error_msg");
         next();
     });
-    
+
     //Banco de dados
-        const url = process.env.MONGODB_URI
+        const banco = process.env.MONGODB_URI
         mongoose.Promise = global.Promise;
-        mongoose.connect(url).then(function(){
+        mongoose.connect(banco).then(function(){
             console.log("Banco de dados conectado");
         }).catch(function(err){
             console.log("Erro: "+err);
@@ -92,6 +92,6 @@ const Questionarios = mongoose.model("questionarios");
 //Servidor
     const porta = process.env.PORT || 8081;
     server.listen(porta,function(){
-        console.log("Servidor rodando na porta" + porta);
+        console.log("Servidor rodando na porta " + porta);
     });
 

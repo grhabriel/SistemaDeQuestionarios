@@ -11,15 +11,14 @@
   "name": "trabalho-pratico-2",
   "description": "Sitezinho que permite o usuário criar e responder a quizzes.",
   "version": "1.0.0",
+  "main": "app.js",
   "engines": {
     "node": "16.13.0",
     "npm": "8.1.0"
   },
-  "main": "app.js",
   "scripts": {
     "start": "node app.js"
-    },
-    
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/grhabriel/SistemaDeQuestionarios.git"
