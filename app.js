@@ -38,7 +38,7 @@ const Questionarios = mongoose.model("questionarios");
 
     //Banco de dados
         mongoose.Promise = global.Promise;
-        mongoose.connect("mongodb://localhost/SistemaQuestionarios").then(function(){
+        mongoose.connect(process.env.MONGODB_URI).then(function(){
             console.log("Banco de dados conectado");
         }).catch(function(err){
             console.log("Erro: "+err);
@@ -89,7 +89,7 @@ const Questionarios = mongoose.model("questionarios");
     })
 
 //Servidor
-    const porta = 8081;
+    const porta = process.env.PORT || 8081;
     server.listen(porta,function(){
         console.log("Servidor rodando na porta" + porta);
     });
