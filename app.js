@@ -35,10 +35,10 @@ const Questionarios = mongoose.model("questionarios");
         res.locals.error_msg = req.flash("error_msg");
         next();
     });
-
+    const uri =  process.env.MONGODB_URI
     //Banco de dados
         mongoose.Promise = global.Promise;
-        mongoose.connect(process.env.MONGODB_URI).then(function(){
+        mongoose.connect(uri).then(function(){
             console.log("Banco de dados conectado");
         }).catch(function(err){
             console.log("Erro: "+err);
