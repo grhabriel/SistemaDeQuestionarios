@@ -35,10 +35,10 @@ const Questionarios = mongoose.model("questionarios");
         res.locals.error_msg = req.flash("error_msg");
         next();
     });
-    const uri =  process.env.MONGODB_URI
+    
     //Banco de dados
         mongoose.Promise = global.Promise;
-        mongoose.connect(uri).then(function(){
+        mongoose.connect("mongodb+srv://gabriel:gHrbaX0208@cluster0.qx9xf.mongodb.net/sistemaDeQuestionarios?retryWrites=true&w=majority").then(function(){
             console.log("Banco de dados conectado");
         }).catch(function(err){
             console.log("Erro: "+err);
