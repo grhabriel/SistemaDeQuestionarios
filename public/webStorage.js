@@ -17,6 +17,8 @@ function logar() {
                 localStorage.setItem("manter-conectado", "true");
             else
                 localStorage.setItem("manter-conectado", "false");
+            
+            sessionStorage.setItem('manter-conectado', 'true');
             divCadastro.style.display = "none";
             divPrincipal.style.display = "block";
         }
@@ -45,7 +47,7 @@ function inscricao() {
         alert("Digite seu nome pra continuar!");
 }
 
-if (localStorage.getItem("manter-conectado") === "true")
+if (localStorage.getItem("manter-conectado") === "true" || sessionStorage.getItem('manter-conectado') === 'true')
     divCadastro.style.display = 'none';
 else {
     if (divCadastro.style.display != "none") 
