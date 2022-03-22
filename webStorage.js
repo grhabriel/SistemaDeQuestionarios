@@ -40,6 +40,7 @@ function inscricao() {
         else
             localStorage.setItem("manter-conectado", "false");
 
+            sessionStorage.setItem('manter-conectado', 'true');
         divCadastro.style.display = 'none';
         divPrincipal.style.display = 'block';
     }
